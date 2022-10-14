@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using namespace std;fggffgfg
 
 // Return the gcd of two integers
 int gcd(int n1, int n2)
