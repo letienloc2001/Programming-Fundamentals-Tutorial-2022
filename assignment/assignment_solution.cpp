@@ -100,9 +100,48 @@ void asm5_ex2() {
     cout << endl << "Total pay: $" << total_pay / 100 << endl;
 }
 
-void asm6_ex1() {}
+void find_weight() {
+    const double G_EARTH = 9.807, G_VENUS = 8.87, G_MARS = 3.7;
+    double mass, earth_weight, venus_weight, mars_weight;
+    
+    cout << "Enter your mass: (kg) ";
+    cin >> mass;
+//    while (!(cin >> mass) || mass <= 0) {
+//         cin.clear();
+//         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//         cout << "Mass must be greater than zero" << endl << endl << "Enter your mass: (kg) ";
+//    }
+    while (mass <= 0) {
+        cout << "Mass must be greater than zero" << endl << endl << "Enter your mass: (kg) ";
+        cin >> mass;
+    }
+    earth_weight = mass * G_EARTH;
+    venus_weight = mass * G_VENUS;
+    mars_weight  = mass * G_MARS;
+    
+    // setw & jutified example
+    // col1          col2
+    // 6cha         14cha
+    // ------ --------------
+    // cat--- --------sufufs
+    // dog--- -----fubsfuusd
+    // mice-- -bfuhsuhfudsdu
+    
+    cout << left << setw(6) << "Planet" << '\t' << right << setw(14) << "Weight (N)" << endl << endl;
+    
+    cout.precision(4);
+    cout << left << setw(6) << "Earth" << '\t' << right << setw(14) << fixed << earth_weight << '\t';
+    if (earth_weight > 1500) {
+        cout << "The object is heavy";
+    } else if (earth_weight < 5) {
+        cout << "The object is light";
+    }
+    cout << endl;
+    cout << left << setw(6) << "Venus" << '\t' << right << setw(14) << fixed << venus_weight << endl;
+    cout << left << setw(6) << "Mars"  << '\t' << right << setw(14) << fixed << mars_weight  << endl;
+}
 
 int main() {
-    asm6_ex1();
+    find_weight();
     return 0;
 }
