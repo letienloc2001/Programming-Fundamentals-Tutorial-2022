@@ -4,9 +4,7 @@
 using namespace std;
 
 int main()
-{
-    long long int a;
-    
+{    
   // Prompt the user for input
   int seconds;
   cout << "Enter an integer for seconds: ";
